@@ -73,12 +73,13 @@ while True:  #inserte while para que se creara un ciclo y poder volver al menu y
             print(f"La división entre {x} y {y} da: {division(x,y)}")
     elif opc=="5":
         lista=[]
-        numero=float(input("Ingresar numeros a promedirar (0 para finalizar):"))
-        while numero !=0:
-            lista.append(numero)  #para promediar use un ciclo while para que el usuario ponga los numeros que quiera y para eso tambien use un append para añdir numeros a la lista
-            numero=float(input("Ingresar numeros a promediar (0 para finalizar):"))  #y puse 0 como tecla para terminar de ingresar numeros
-        if numero ==0:
+        while (True):
+            limite=int(input("Ingrese numero de digitos que usara:"))
+            for i in range(limite):    #use un for para que el usuario ponga el numero de digitos que quiere usar
+                numero=float(input("Ingresar numeros a promediar:")) 
+                lista.append(numero)      #para promediar use un ciclo while para que el usuario ponga los numeros que quiera y para eso tambien use un append para añdir numeros a la lista
             print(f"El promedio es {promedio(lista)}")
+            break
     elif opc=="6":
         x=float(input("Dame el valor al que se le sacara raiz: \n"))
         if x<0:
